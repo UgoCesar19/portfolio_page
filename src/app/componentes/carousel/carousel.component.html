@@ -1,0 +1,29 @@
+<div class="vh-100 vw-100 position-relative">
+  <div class="position-absolute top-0 start-0 w-100 h-100">
+    <app-quadro />
+  </div>
+  <div class="carrossel d-flex flex-row justify-content-center align-items-center h-100 w-100 position-absolute">
+      <button
+          class="btn btn-light border-info"
+          (click)='anterior()'>{{"<"}}</button>
+      <div class="d-flex flex-row justify-content-center align-items-center h-75 w-50">
+        <div class="d-flex justify-content-center align-items-center position-relative h-100 w-100 perspectiva">
+          @for (item of items; track $index; let i = $index) {
+            <div
+              [@animation]="getState(i)"
+              class="position-absolute image-container h-50 w-50">
+              <a href="{{ item.link }}">
+                <img
+                  class="border border-3 border-info img-fluid img-thumbnail h-100 w-100"
+                  src="{{ item.image }}" />
+              </a>
+              <h5 class="text-center mt-2">{{ item.label }}</h5>
+            </div>
+          }
+        </div>
+      </div>
+      <button
+          class="btn btn-light border-info"
+          (click)='proximo()'>{{">"}}</button>
+  </div>
+</div>

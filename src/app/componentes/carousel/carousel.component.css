@@ -1,0 +1,7 @@
+.perspectiva {
+  perspective: 600px
+}
+.carrossel {
+  min-height: 400px;
+  min-width: 500px
+}
